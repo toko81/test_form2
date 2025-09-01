@@ -18,11 +18,11 @@ use App\Http\Controllers\TestController;
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [TestController::class, 'admin']);
 
-    Route::get('/search', [ContactController::class, 'search']);
+    Route::get('/search', [TestController::class, 'search']);
 
-    Route::post('/delete', [ContactController::class, 'destroy']);
+    Route::post('/delete', [TestController::class, 'destroy']);
 
-    Route::post('/export', [ContactController::class, 'export']);
+    Route::post('/export', [TestController::class, 'export']);
 });
 
 Route::get('/', [TestController::class, 'index']);
