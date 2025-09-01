@@ -66,4 +66,4 @@
     </div>
   </form>
 </div>
-@endsection
+@endsection('content')
