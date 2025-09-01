@@ -4,6 +4,10 @@
 <link rel="stylesheet" href="{{ asset('css/register.css') }}">
 @endsection
 
+@section('link')
+<a class="header__link" href="/login">login</a>
+@endsection
+
 @section('content')
 <div class="register-form__content">
   <div class="register-form__heading">
@@ -17,7 +21,7 @@
       </div>
       <div class="form__group-content">
         <div class="form__input--text">
-          <input type="text" name="name" placeholder="例: 山田 太郎" value="{{ old('name') }}" />
+          <input type="text" name="name" id="name" placeholder="例: 山田 太郎" value="{{ old('name') }}" />
         </div>
         <div class="form__error">
           @error('name')
@@ -32,7 +36,7 @@
       </div>
       <div class="form__group-content">
         <div class="form__input--text">
-          <input type="email" name="email" placeholder="例:test@example.com" value="{{ old('email') }}" />
+          <input type="mail" name="email" id="email" placeholder="例:test@example.com" value="{{ old('email') }}" />
         </div>
         <div class="form__error">
           @error('email')
@@ -47,7 +51,7 @@
       </div>
       <div class="form__group-content">
         <div class="form__input--text">
-          <input type="password" name="password" placeholder="例:coachtech1106" value="{{ old('password') }}" />
+          <input type="password" name="password" id="password" placeholder="例:coachtech1106" value="{{ old('password') }}" />
         </div>
         <div class="form__error">
           @error('password')

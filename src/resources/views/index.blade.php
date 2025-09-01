@@ -24,7 +24,7 @@
                 <h2>Contact</h2>
             </div>
 
-            <form class="form" action="/contacts/confirm" method="post">
+            <form class="form" action="confirm" method="post">
                 @csrf
                 <div class="form__group">
                     <div class="form__group-title">
@@ -33,8 +33,8 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--name">
-                            <input type="text" name="first_name" placeholder="例:山田" value="{{ old('first_name') }}"/>
-                            <input type="text" name="last_name" placeholder="例:太郎" value="{{ old('last_names') }}" />
+                            <input type="text" name="first_name" id="name" placeholder="例:山田" value="{{ old('first_name') }}"/>
+                            <input type="text" name="last_name" id="name" placeholder="例:太郎" value="{{ old('last_names') }}" />
                         </div>
                         <div class="form__error">
                         @error('first_name')
@@ -56,7 +56,7 @@
                     <div class="form__group-content">
                         <div class="form__input--radio">
                             <label class="radio-label">
-                                <input type="radio" name="gender" value="1" {{ old('gender','1') == '1' ? 'checked' : '' }}/> 男性
+                                <input type="radio" name="gender" id="male" value="1" {{ old('gender','1') == '1' ? 'checked' : '' }}/> 男性
                             </label>
                             <label class="radio-label">
                                 <input type="radio" name="gender" value="2" {{ old('gender') == '2' ? 'checked' : '' }}/> 女性

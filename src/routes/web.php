@@ -14,19 +14,22 @@ use App\Http\Controllers\TestController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::middleware('auth')->group(function () {
-    Route::get('/', [TestController::class, 'admin']);
+    Route::get('/admin', [TestController::class, 'admin']);
+
+    Route::get('/search', [ContactController::class, 'search']);
+
+    Route::post('/delete', [ContactController::class, 'destroy']);
+
+    Route::post('/export', [ContactController::class, 'export']);
 });
 
 Route::get('/', [TestController::class, 'index']);
 
-Route::post('/contacts/confirm', [TestController::class, 'confirm']);
+Route::post('/confirm', [TestController::class, 'confirm']);
 
-Route::post('/contacts', [TestController::class, 'store']);
+Route::post('/thanks', [TestController::class, 'store']);
 
 
 
