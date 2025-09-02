@@ -25,7 +25,7 @@ class TestController extends Controller
         $categories = Category::all();
         $csvData = Contact::all();
         
-        return view('admin',compact('contacts', 'categories','csvDate'));
+        return view('admin',compact('contacts', 'categories' , 'csvData'));
     }
 
     public function confirm(ContactRequest $request)

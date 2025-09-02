@@ -18,7 +18,7 @@ use App\Http\Controllers\TestController;
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [TestController::class, 'admin']);
 
-    Route::get('/search', [TestController::class, 'search']);
+    Route::get('/contacts/search', [TestController::class, 'search']);
 
     Route::post('/delete', [TestController::class, 'destroy']);
 
