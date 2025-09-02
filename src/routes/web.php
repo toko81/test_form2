@@ -16,13 +16,15 @@ use App\Http\Controllers\TestController;
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/admin', [TestController::class, 'admin']);
+    Route::get('/admin', [TestController::class, 'admin'])->name('admin');
 
-    Route::get('/contacts/search', [TestController::class, 'search']);
+    Route::get('/contacts/search', [TestController::class, 'search'])->name('contacts.search');
 
-    Route::post('/delete', [TestController::class, 'destroy']);
+    Route::get('/contacts', [TestController::class, 'index'])->name('contacts.index');
 
-    Route::post('/export', [TestController::class, 'export']);
+    Route::post('/delete', [TestController::class, 'destroy'])->name('contacts.destroy');
+
+    Route::post('/export', [TestController::class, 'export'])->name('contacts.export');
 });
 
 Route::get('/', [TestController::class, 'index']);

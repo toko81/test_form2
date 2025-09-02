@@ -16,7 +16,7 @@ class TestController extends Controller
     {
         $categories = Category::all();
         
-        return view('contact', compact('categories'));
+        return view('admin', compact('categories'));
     }
 
     public function admin()
@@ -32,7 +32,7 @@ class TestController extends Controller
     {
         $contact = $request->all();$category = Category::find($request->category_id);
           
-        return view('confirm', compact('contacts', 'category'));
+        return view('confirm', compact('index', 'category'));
     }
 
     public function store(ContactRequest $request)
@@ -71,7 +71,7 @@ class TestController extends Controller
         $contacts = $query->paginate(7);
         $csvData = $query->get();
         $categories = Category::all();
-        return view('admin', compact('contacts', 'categories', 'csvData'));
+        return view('admin', compact('index', 'categories', 'csvData'));
     }
 
     public function destroy(Request $request)
